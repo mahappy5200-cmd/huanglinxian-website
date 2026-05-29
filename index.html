@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>黃林賢｜龍埔向前・賢在實現</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:"Noto Sans TC",sans-serif;
+    }
+
+    body{
+      background:#f4f8fc;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* Navbar */
+
+    .navbar{
+      width:100%;
+      padding:20px 8%;
+      background:#fff;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:0;
+      z-index:999;
+      box-shadow:0 2px 10px rgba(0,0,0,.05);
+    }
+
+    .logo{
+      font-size:32px;
+      font-weight:900;
+      color:#005fd1;
+    }
+
+    .logo span{
+      color:#ffb300;
+    }
+
+    .menu{
+      display:flex;
+      gap:30px;
+    }
+
+    .menu a{
+      color:#333;
+      font-weight:700;
+      transition:.3s;
+    }
+
+    .menu a:hover{
+      color:#005fd1;
+    }
+
+    /* Hero */
+
+    .hero{
+      width:100%;
+      min-height:100vh;
+      padding:140px 8% 80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      background:
+      linear-gradient(to right,#ffffff 45%,#0b7cff 45%);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-left{
+      width:50%;
+      z-index:2;
+    }
+
+    .hero-left h1{
+      font-size:90px;
+      line-height:1.1;
+      color:#005fd1;
+      font-weight:900;
+    }
+
+    .hero-left h1 span{
+      color:#ffb300;
+    }
+
+    .slogan{
+      margin-top:25px;
+      font-size:24px;
+      font-weight:700;
+      color:#444;
+    }
+
+    .btn-group{
+      margin-top:40px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 32px;
+      border-radius:50px;
+      font-weight:900;
+      transition:.3s;
+    }
+
+    .btn-primary{
+      background:#005fd1;
+      color:#fff;
+    }
+
+    .btn-primary:hover{
+      background:#0047a1;
+    }
+
+    .btn-outline{
+      border:2px solid #005fd1;
+      color:#005fd1;
+    }
+
+    .btn-outline:hover{
+      background:#005fd1;
+      color:#fff;
+    }
+
+    .hero-right{
+      width:42%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      z-index:2;
+    }
+
+    .hero-right img{
+      width:100%;
+      max-width:520px;
+    }
+
+    /* About */
+
+    .section{
+      padding:100px 8%;
+    }
+
+    .title{
+      font-size:48px;
+      font-weight:900;
+      color:#005fd1;
+      margin-bottom:50px;
+    }
+
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:30px;
+    }
+
+    .about-text{
+      font-size:20px;
+      line-height:2;
+      color:#444;
+    }
+
+    /* Experience */
+
+    .experience{
+      background:#fff;
+      border-radius:30px;
+      padding:50px;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+    }
+
+    .experience ul{
+      list-style:none;
+    }
+
+    .experience li{
+      margin-bottom:20px;
+      font-size:20px;
+      padding-left:35px;
+      position:relative;
+    }
+
+    .experience li::before{
+      content:"✔";
+      position:absolute;
+      left:0;
+      color:#0b7cff;
+      font-weight:bold;
+    }
+
+    /* Service */
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:#fff;
+      border-radius:25px;
+      padding:40px 30px;
+      text-align:center;
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
+      transition:.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+    }
+
+    .card h3{
+      margin-top:20px;
+      font-size:26px;
+      color:#005fd1;
+    }
+
+    .card p{
+      margin-top:15px;
+      line-height:1.8;
+      color:#666;
+    }
+
+    /* Footer */
+
+    footer{
+      background:#005fd1;
+      color:#fff;
+      padding:60px 8%;
+      margin-top:80px;
+    }
+
+    .footer-title{
+      font-size:48px;
+      font-weight:900;
+    }
+
+    .footer-slogan{
+      color:#ffd54f;
+      font-size:24px;
+      margin-top:10px;
+      font-weight:700;
+    }
+
+    .footer-info{
+      margin-top:30px;
+      line-height:2;
+      font-size:18px;
+    }
+
+    /* Responsive */
+
+    @media(max-width:992px){
+
+      .hero{
+        flex-direction:column;
+        background:#fff;
+        text-align:center;
+      }
+
+      .hero-left{
+        width:100%;
+      }
+
+      .hero-right{
+        width:100%;
+        margin-top:50px;
+      }
+
+      .hero-left h1{
+        font-size:60px;
+      }
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .menu{
+        display:none;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav class="navbar">
+
+    <div class="logo">
+      黃林賢<span>.</span>
+    </div>
+
+    <div class="menu">
+      <a href="#">首頁</a>
+      <a href="#">關於阿賢</a>
+      <a href="#">服務專區</a>
+      <a href="#">地方建設</a>
+      <a href="#">最新消息</a>
+      <a href="#">聯絡我們</a>
+    </div>
+
+  </nav>
+
+  <!-- Hero -->
+
+  <section class="hero">
+
+    <div class="hero-left">
+
+      <h1>
+        龍埔向前<br>
+        <span>賢在實現</span>
+      </h1>
+
+      <div class="slogan">
+        在地深耕・用心服務・讓龍埔更好
+      </div>
+
+      <div class="btn-group">
+
+        <a href="#" class="btn btn-primary">
+          最新消息
+        </a>
+
+        <a href="https://facebook.com" class="btn btn-outline">
+          FB｜黃林賢
+        </a>
+
+      </div>
+
+    </div>
+
+    <div class="hero-right">
+
+      <img src="your-photo.svg" alt="黃林賢">
+
+    </div>
+
+  </section>
+
+  <!-- About -->
+
+  <section class="section">
+
+    <div class="title">
+      關於阿賢
+    </div>
+
+    <div class="about">
+
+      <img src="family-photo.svg" alt="黃林賢">
+
+      <div class="about-text">
+
+        我是黃林賢，土生土長的龍埔人。<br><br>
+
+        長期投入地方服務，深耕基層,
+        傾聽鄉親聲音,
+        希望讓龍埔成為更安全、更進步、更幸福的地方。<br><br>
+
+        未來，我會持續努力,
+        與大家一起讓龍埔向前！
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Experience -->
+
+  <section class="section">
+
+    <div class="title">
+      在地經歷
+    </div>
+
+    <div class="experience">
+
+      <ul>
+
+        <li>新北市議員林金結服務處 副主任</li>
+        <li>新北市三峽分局義警中隊 副中隊長</li>
+        <li>北大國小志工隊 大隊長</li>
+        <li>北大特區聯合策進會 總幹事</li>
+        <li>三峽無極三清宮 管理委員會 副主委</li>
+        <li>龍埔里里長參選人</li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+  <!-- Service -->
+
+  <section class="section">
+
+    <div class="title">
+      服務專區
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>民眾陳情</h3>
+        <p>
+          傾聽地方聲音,
+          即時協助民眾問題。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>志工招募</h3>
+        <p>
+          一起加入服務團隊,
+          讓龍埔更進步。
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>活動資訊</h3>
+        <p>
+          掌握地方活動、
+          社區公告與最新消息。
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+
+  <footer>
+
+    <div class="footer-title">
+      黃林賢
+    </div>
+
+    <div class="footer-slogan">
+      龍埔向前・賢在實現
+    </div>
+
+    <div class="footer-info">
+
+      Facebook：黃林賢<br>
+      地址：新北市三峽區三樹路112號
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
