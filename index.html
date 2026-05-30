@@ -4,9 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>黃林賢｜龍埔向前・賢在實現</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -14,7 +16,9 @@
       font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
     }
 
-    html{scroll-behavior:smooth;}
+    html{
+      scroll-behavior:smooth;
+    }
 
     body{
       background:#f4f8fc;
@@ -22,7 +26,16 @@
       overflow-x:hidden;
     }
 
-    a{text-decoration:none;}
+    a{
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* Navbar */
 
     .navbar{
       width:100%;
@@ -44,7 +57,9 @@
       color:#005fd1;
     }
 
-    .logo span{color:#ffb300;}
+    .logo span{
+      color:#ffb300;
+    }
 
     .menu{
       display:flex;
@@ -55,21 +70,34 @@
       color:#222;
       font-size:16px;
       font-weight:800;
+      transition:.3s;
     }
 
-    .menu a:hover{color:#005fd1;}
+    .menu a:hover{
+      color:#005fd1;
+    }
+
+    /* Hero */
 
     .hero{
       min-height:100vh;
-      padding:140px 8% 80px;
+      padding:150px 8% 100px;
       display:flex;
       align-items:center;
       justify-content:space-between;
+
       background:
-        radial-gradient(circle at top right,rgba(255,255,255,.16),transparent 32%),
-        linear-gradient(135deg,#ffffff 0%,#ffffff 43%,#0b7cff 43%,#0046a1 100%);
-      position:relative;
+      radial-gradient(circle at top right,rgba(255,255,255,.15),transparent 30%),
+      linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #ffffff 43%,
+        #0b7cff 43%,
+        #0046a1 100%
+      );
+
       overflow:hidden;
+      position:relative;
     }
 
     .hero-left{
@@ -81,17 +109,18 @@
       display:inline-block;
       background:#ffb300;
       color:#003b88;
-      padding:10px 20px;
+      padding:10px 22px;
       border-radius:999px;
       font-weight:900;
-      margin-bottom:25px;
+      margin-bottom:26px;
+      box-shadow:0 10px 25px rgba(255,179,0,.35);
     }
 
     .hero h1{
       font-size:100px;
       line-height:1.05;
-      font-weight:900;
       color:#005fd1;
+      font-weight:900;
       letter-spacing:-4px;
     }
 
@@ -109,10 +138,10 @@
 
     .hero-desc{
       margin-top:24px;
-      max-width:620px;
       font-size:20px;
       line-height:2;
       color:#555;
+      max-width:620px;
     }
 
     .hero-buttons{
@@ -130,10 +159,14 @@
       display:inline-block;
     }
 
+    .btn:hover{
+      transform:translateY(-5px);
+    }
+
     .btn-primary{
       background:#005fd1;
       color:#fff;
-      box-shadow:0 12px 30px rgba(0,95,209,.25);
+      box-shadow:0 12px 30px rgba(0,95,209,.3);
     }
 
     .btn-fb{
@@ -147,19 +180,17 @@
       color:#fff;
     }
 
-    .btn:hover{
-      transform:translateY(-4px);
-    }
+    /* LINE QR */
 
     .line-qrcode{
-      margin-top:32px;
+      margin-top:35px;
       display:flex;
       align-items:center;
-      gap:18px;
+      gap:20px;
     }
 
     .line-qrcode img{
-      width:115px;
+      width:120px;
       border-radius:22px;
       background:#fff;
       padding:8px;
@@ -167,17 +198,19 @@
     }
 
     .line-qrcode div{
-      font-weight:900;
+      line-height:1.9;
+      font-weight:800;
       color:#333;
-      line-height:1.8;
     }
+
+    /* Hero Photo */
 
     .hero-right{
       width:42%;
       display:flex;
       justify-content:center;
-      position:relative;
       z-index:2;
+      position:relative;
     }
 
     .hero-photo{
@@ -188,10 +221,19 @@
       content:"";
       position:absolute;
       inset:-35px;
-      background:linear-gradient(135deg,#fff,#8ec3ff);
       border-radius:45px;
+
+      background:
+      linear-gradient(
+        135deg,
+        #ffffff,
+        #8ec3ff
+      );
+
       transform:rotate(-6deg);
-      box-shadow:0 30px 80px rgba(0,95,209,.35);
+
+      box-shadow:
+      0 35px 80px rgba(0,95,209,.35);
     }
 
     .hero-photo img{
@@ -199,55 +241,64 @@
       max-width:560px;
       position:relative;
       z-index:2;
-      filter:drop-shadow(0 25px 40px rgba(0,0,0,.25));
+
+      filter:
+      drop-shadow(0 25px 45px rgba(0,0,0,.25));
     }
+
+    /* Strip */
 
     .campaign-strip{
       background:#003b88;
       color:#fff;
       padding:22px 8%;
+
       display:flex;
       justify-content:center;
       gap:45px;
       flex-wrap:wrap;
-      font-weight:900;
+
       font-size:18px;
+      font-weight:900;
     }
 
+    /* Section */
+
     .section{
-      padding:105px 8%;
+      padding:110px 8%;
     }
 
     .title{
-      font-size:54px;
-      font-weight:900;
-      color:#005fd1;
-      margin-bottom:55px;
       text-align:center;
+      font-size:56px;
+      color:#005fd1;
+      font-weight:900;
+      margin-bottom:60px;
       letter-spacing:-2px;
     }
+
+    /* Story */
 
     .story{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:65px;
+      gap:70px;
       align-items:center;
     }
 
     .story img{
-      width:100%;
       border-radius:35px;
       box-shadow:0 20px 55px rgba(0,0,0,.1);
     }
 
     .story-text{
       font-size:22px;
-      line-height:2.15;
+      line-height:2.2;
       color:#444;
     }
 
     .story-highlight{
-      font-size:38px;
+      font-size:40px;
       line-height:1.5;
       color:#005fd1;
       font-weight:900;
@@ -259,17 +310,18 @@
     }
 
     .story-end{
-      font-size:34px;
-      font-weight:900;
+      font-size:36px;
       color:#ffb300;
+      font-weight:900;
       margin-top:35px;
     }
 
+    /* MV */
+
     .mv-wrap{
-      border-radius:38px;
       overflow:hidden;
+      border-radius:38px;
       box-shadow:0 25px 70px rgba(0,0,0,.2);
-      background:#000;
     }
 
     .mv-wrap iframe{
@@ -279,14 +331,48 @@
       display:block;
     }
 
-    .policy-grid,
+    /* Policy */
+
+    .policy-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:28px;
+    }
+
+    .policy-card{
+      background:#fff;
+      padding:42px 32px;
+      border-radius:32px;
+      box-shadow:0 12px 35px rgba(0,0,0,.06);
+      transition:.35s;
+    }
+
+    .policy-card:hover{
+      transform:translateY(-8px);
+      box-shadow:0 20px 55px rgba(0,95,209,.14);
+    }
+
+    .policy-card h3{
+      font-size:28px;
+      color:#005fd1;
+      margin-bottom:18px;
+      font-weight:900;
+    }
+
+    .policy-card p{
+      font-size:18px;
+      line-height:2;
+      color:#555;
+    }
+
+    /* News */
+
     .news-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
       gap:28px;
     }
 
-    .policy-card,
     .news-card{
       background:#fff;
       padding:42px 32px;
@@ -295,25 +381,9 @@
       transition:.35s;
     }
 
-    .policy-card:hover,
     .news-card:hover{
       transform:translateY(-8px);
-      box-shadow:0 20px 55px rgba(0,95,209,.13);
-    }
-
-    .policy-card h3,
-    .news-card h3{
-      font-size:28px;
-      color:#005fd1;
-      margin-bottom:18px;
-      font-weight:900;
-    }
-
-    .policy-card p,
-    .news-card p{
-      font-size:18px;
-      color:#555;
-      line-height:2;
+      box-shadow:0 20px 55px rgba(0,95,209,.14);
     }
 
     .news-date{
@@ -326,42 +396,76 @@
       margin-bottom:18px;
     }
 
+    .news-card h3{
+      font-size:28px;
+      color:#005fd1;
+      margin-bottom:18px;
+      font-weight:900;
+    }
+
+    .news-card p{
+      font-size:18px;
+      line-height:2;
+      color:#555;
+    }
+
+    /* Gallery */
+
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:24px;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:28px;
     }
 
     .gallery-item{
       position:relative;
       overflow:hidden;
-      border-radius:30px;
-      box-shadow:0 15px 35px rgba(0,0,0,.1);
+
+      border-radius:32px;
+
       background:#fff;
-      height:310px;
+
+      height:420px;
+
+      box-shadow:
+      0 15px 40px rgba(0,0,0,.12);
+
+      transition:.35s;
+    }
+
+    .gallery-item:hover{
+      transform:translateY(-6px);
     }
 
     .gallery-item img{
       width:100%;
       height:100%;
       object-fit:cover;
-      transition:.4s;
+      transition:.5s;
     }
 
     .gallery-item:hover img{
-      transform:scale(1.07);
+      transform:scale(1.08);
     }
 
     .gallery-label{
       position:absolute;
       left:18px;
       bottom:18px;
+
       background:rgba(0,95,209,.9);
       color:#fff;
-      padding:10px 16px;
+
+      padding:10px 18px;
+
       border-radius:999px;
+
       font-weight:900;
+
+      backdrop-filter:blur(8px);
     }
+
+    /* Experience */
 
     .experience{
       background:#fff;
@@ -380,7 +484,7 @@
       font-weight:700;
       padding-left:42px;
       position:relative;
-      line-height:1.8;
+      line-height:1.9;
     }
 
     .experience li::before{
@@ -391,63 +495,90 @@
       font-weight:900;
     }
 
+    /* CTA */
+
     .cta{
-      background:linear-gradient(135deg,#005fd1,#003b88);
+      margin:60px 8% 0;
+
+      padding:80px 8%;
+
+      border-radius:42px;
+
+      background:
+      linear-gradient(
+        135deg,
+        #005fd1,
+        #003b88
+      );
+
       color:#fff;
+
       text-align:center;
-      border-radius:40px;
-      padding:70px 8%;
-      margin:50px 8% 0;
-      box-shadow:0 25px 70px rgba(0,95,209,.22);
+
+      box-shadow:
+      0 25px 70px rgba(0,95,209,.22);
     }
 
     .cta h2{
-      font-size:48px;
+      font-size:50px;
       font-weight:900;
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
 
     .cta p{
       font-size:22px;
       line-height:2;
       color:#eef4ff;
-      margin-bottom:35px;
+      margin-bottom:36px;
     }
+
+    /* Footer */
 
     footer{
       background:#002f70;
       color:#fff;
-      padding:75px 8%;
-      margin-top:90px;
       text-align:center;
+      padding:80px 8%;
+      margin-top:90px;
     }
 
     .footer-title{
-      font-size:56px;
+      font-size:58px;
       font-weight:900;
     }
 
     .footer-slogan{
-      margin-top:14px;
+      margin-top:15px;
       color:#ffd54f;
-      font-size:30px;
+      font-size:32px;
       font-weight:900;
     }
 
     .footer-info{
-      margin-top:34px;
+      margin-top:36px;
+      line-height:2.3;
       font-size:20px;
-      line-height:2.2;
       color:#eef4ff;
     }
 
+    /* Mobile */
+
     @media(max-width:992px){
-      .menu{display:none;}
+
+      .menu{
+        display:none;
+      }
 
       .hero{
         flex-direction:column;
         text-align:center;
-        background:linear-gradient(180deg,#fff 0%,#eef6ff 100%);
+
+        background:
+        linear-gradient(
+          180deg,
+          #fff 0%,
+          #eef6ff 100%
+        );
       }
 
       .hero-left,
@@ -455,16 +586,16 @@
         width:100%;
       }
 
+      .hero-right{
+        margin-top:60px;
+      }
+
       .hero h1{
-        font-size:64px;
+        font-size:66px;
       }
 
       .hero-subtitle{
-        font-size:23px;
-      }
-
-      .hero-right{
-        margin-top:60px;
+        font-size:24px;
       }
 
       .story{
@@ -472,21 +603,32 @@
       }
 
       .title{
-        font-size:42px;
+        font-size:44px;
       }
 
       .line-qrcode{
         justify-content:center;
         flex-direction:column;
       }
+
+      .gallery-item{
+        height:340px;
+      }
+
     }
+
   </style>
 </head>
 
 <body>
 
+  <!-- Navbar -->
+
   <nav class="navbar">
-    <div class="logo">黃林賢<span>.</span></div>
+
+    <div class="logo">
+      黃林賢<span>.</span>
+    </div>
 
     <div class="menu">
       <a href="#home">首頁</a>
@@ -496,11 +638,18 @@
       <a href="#news">最新消息</a>
       <a href="#gallery">活動照片</a>
     </div>
+
   </nav>
 
+  <!-- Hero -->
+
   <section class="hero" id="home">
+
     <div class="hero-left">
-      <div class="badge">龍埔里里長候選人</div>
+
+      <div class="badge">
+        龍埔里里長候選人
+      </div>
 
       <h1>
         龍埔向前<br>
@@ -513,189 +662,340 @@
       </div>
 
       <div class="hero-desc">
-        深耕地方、傾聽民意、服務鄉親，用實際行動讓龍埔變得更安全、更進步、更有溫度。
+        深耕地方、傾聽民意、服務鄉親，
+        用實際行動讓龍埔變得更安全、更進步、更有溫度。
       </div>
 
       <div class="hero-buttons">
-        <a href="#mv" class="btn btn-primary">▶ 觀看競選 MV</a>
 
-        <a href="https://www.facebook.com/share/1Edr6P6yqN/?mibextid=wwXIfr"
-           class="btn btn-fb"
-           target="_blank">
+        <a href="#mv" class="btn btn-primary">
+          ▶ 觀看競選 MV
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/1Edr6P6yqN/?mibextid=wwXIfr"
+          class="btn btn-fb"
+          target="_blank">
+
           FB｜黃林賢
+
         </a>
 
-        <a href="https://line.me/R/ti/p/@120ztjqs"
-           class="btn btn-line"
-           target="_blank">
+        <a
+          href="https://line.me/R/ti/p/@120ztjqs"
+          class="btn btn-line"
+          target="_blank">
+
           LINE｜@120ztjqs
+
         </a>
+
       </div>
 
       <div class="line-qrcode">
+
         <img src="林賢官方LINE.png" alt="LINE QR Code">
+
         <div>
           掃描加入官方 LINE<br>
           掌握服務與活動消息
         </div>
+
       </div>
+
     </div>
 
     <div class="hero-right">
+
       <div class="hero-photo">
+
         <img src="huang2.jpg" alt="黃林賢">
+
       </div>
+
     </div>
+
   </section>
 
+  <!-- Strip -->
+
   <div class="campaign-strip">
+
     <div>🚦 交通安全</div>
     <div>🌳 環境品質</div>
     <div>🧑 青年參與</div>
     <div>👵 長者照顧</div>
     <div>❤️ 弱勢關懷</div>
+
   </div>
 
+  <!-- Story -->
+
   <section class="section" id="story">
-    <div class="title">阿賢的故事</div>
+
+    <div class="title">
+      阿賢的故事
+    </div>
 
     <div class="story">
+
       <img src="a1.png" alt="黃林賢">
 
       <div class="story-text">
+
         <div class="story-highlight">
           「真正的地方服務，<br>
           不是選舉到了才出現。」
         </div>
 
-        <p>我是黃林賢，土生土長的龍埔囡仔。</p>
-
         <p>
-          從27歲開始投入地方服務，至今已經走過多年基層歷練。
+          我是黃林賢，土生土長的龍埔囡仔。
         </p>
 
         <p>
-          我始終相信，地方需要的是願意傾聽、願意行動、願意真正站在第一線的人。
+          從27歲開始投入地方服務，
+          至今已經走過多年基層歷練。
         </p>
 
         <p>
-          無論是交通安全、環境改善、青年參與、長者照顧，還是弱勢關懷，
-          我都希望用實際行動，一步一步讓龍埔變得更好。
+          我始終相信，
+          地方需要的是願意傾聽、
+          願意行動、
+          願意真正站在第一線的人。
         </p>
 
-        <p class="story-end">龍埔向前，賢在實現。</p>
+        <p>
+          無論是交通安全、
+          環境改善、
+          青年參與、
+          長者照顧，
+          還是弱勢關懷，
+          我都希望用實際行動，
+          一步一步讓龍埔變得更好。
+        </p>
+
+        <p class="story-end">
+          龍埔向前，賢在實現。
+        </p>
+
       </div>
+
     </div>
+
   </section>
 
+  <!-- MV -->
+
   <section class="section" id="mv">
-    <div class="title">阿賢的故事 MV</div>
+
+    <div class="title">
+      阿賢的故事 MV
+    </div>
 
     <div class="mv-wrap">
+
       <iframe
         src="https://www.youtube.com/embed/_9SQmmDC2C0"
         title="黃林賢 MV"
         allowfullscreen>
       </iframe>
+
     </div>
+
   </section>
 
+  <!-- Policy -->
+
   <section class="section" id="policy">
-    <div class="title">五大主張</div>
+
+    <div class="title">
+      五大主張
+    </div>
 
     <div class="policy-grid">
+
       <div class="policy-card">
         <h3>🚦 交通安全</h3>
-        <p>改善危險路口、強化學區安全，守護孩子與行人安心通行。</p>
+        <p>
+          改善危險路口、強化學區安全，
+          守護孩子與行人安心通行。
+        </p>
       </div>
 
       <div class="policy-card">
         <h3>🌳 環境品質</h3>
-        <p>提升公共環境、增加綠化美化，打造更乾淨舒適的龍埔。</p>
+        <p>
+          提升公共環境、增加綠化美化，
+          打造更乾淨舒適的龍埔。
+        </p>
       </div>
 
       <div class="policy-card">
         <h3>🧑 青年參與</h3>
-        <p>鼓勵青年投入地方，建立更多世代交流與公共參與機會。</p>
+        <p>
+          鼓勵青年投入地方，
+          建立更多世代交流與公共參與機會。
+        </p>
       </div>
 
       <div class="policy-card">
         <h3>👵 長者照顧</h3>
-        <p>關心長輩需求，推動友善高齡環境，讓長者生活更安心。</p>
+        <p>
+          關心長輩需求，
+          推動友善高齡環境，
+          讓長者生活更安心。
+        </p>
       </div>
 
       <div class="policy-card">
         <h3>❤️ 弱勢關懷</h3>
-        <p>串聯公益與社會資源，協助弱勢家庭，不讓任何人被遺忘。</p>
+        <p>
+          串聯公益與社會資源，
+          協助弱勢家庭，
+          不讓任何人被遺忘。
+        </p>
       </div>
+
     </div>
+
   </section>
+
+  <!-- News -->
 
   <section class="section" id="news">
-    <div class="title">最新消息</div>
+
+    <div class="title">
+      最新消息
+    </div>
 
     <div class="news-grid">
+
       <div class="news-card">
-        <div class="news-date">選戰動態</div>
-        <h3>早安站路口</h3>
-        <p>只要行程允許，阿賢會持續在龍埔各路口與大家問候，傾聽地方聲音。</p>
+
+        <div class="news-date">
+          選戰動態
+        </div>
+
+        <h3>
+          早安站路口
+        </h3>
+
+        <p>
+          只要行程允許，
+          阿賢會持續在龍埔各路口與大家問候，
+          傾聽地方聲音。
+        </p>
+
       </div>
 
       <div class="news-card">
-        <div class="news-date">地方服務</div>
-        <h3>交通安全關注</h3>
-        <p>持續關心學區、社區周邊交通安全，爭取更友善的通學與行人環境。</p>
+
+        <div class="news-date">
+          地方服務
+        </div>
+
+        <h3>
+          交通安全關注
+        </h3>
+
+        <p>
+          持續關心學區、
+          社區周邊交通安全，
+          爭取更友善的通學與行人環境。
+        </p>
+
       </div>
 
       <div class="news-card">
-        <div class="news-date">活動資訊</div>
-        <h3>親子與社區活動</h3>
-        <p>透過親子活動、社區互動與志工參與，讓龍埔更有溫度。</p>
+
+        <div class="news-date">
+          活動資訊
+        </div>
+
+        <h3>
+          親子與社區活動
+        </h3>
+
+        <p>
+          透過親子活動、
+          社區互動與志工參與，
+          讓龍埔更有溫度。
+        </p>
+
       </div>
+
     </div>
+
   </section>
 
+  <!-- Gallery -->
+
   <section class="section" id="gallery">
-    <div class="title">活動照片牆</div>
+
+    <div class="title">
+      活動照片牆
+    </div>
 
     <div class="gallery-grid">
+
       <div class="gallery-item">
         <img src="photo1.jpg" alt="活動照片">
-        <div class="gallery-label">路口拜票</div>
+        <div class="gallery-label">
+          路口拜票
+        </div>
       </div>
 
       <div class="gallery-item">
         <img src="photo2.jpg" alt="活動照片">
-        <div class="gallery-label">志工服務</div>
+        <div class="gallery-label">
+          志工服務
+        </div>
       </div>
 
       <div class="gallery-item">
         <img src="photo3.jpg" alt="活動照片">
-        <div class="gallery-label">親子活動</div>
+        <div class="gallery-label">
+          親子活動
+        </div>
       </div>
 
       <div class="gallery-item">
         <img src="photo4.jpg" alt="活動照片">
-        <div class="gallery-label">地方會勘</div>
+        <div class="gallery-label">
+          地方會勘
+        </div>
       </div>
 
       <div class="gallery-item">
         <img src="photo5.jpg" alt="活動照片">
-        <div class="gallery-label">里民互動</div>
+        <div class="gallery-label">
+          里民互動
+        </div>
       </div>
 
       <div class="gallery-item">
         <img src="photo6.jpg" alt="活動照片">
-        <div class="gallery-label">服務日常</div>
+        <div class="gallery-label">
+          服務日常
+        </div>
       </div>
+
     </div>
+
   </section>
 
-  <section class="section" id="experience">
-    <div class="title">在地經歷</div>
+  <!-- Experience -->
+
+  <section class="section">
+
+    <div class="title">
+      在地經歷
+    </div>
 
     <div class="experience">
+
       <ul>
+
         <li>新北市議員林金結服務處 副主任</li>
         <li>新北市三峽分局義警中隊 副中隊長</li>
         <li>北大國小志工隊 大隊長</li>
@@ -703,41 +1003,72 @@
         <li>北大特區聯合策進會 理事</li>
         <li>三峽無極三清宮 管理委員會 副主委</li>
         <li>龍埔里里長候選人</li>
+
       </ul>
+
     </div>
+
   </section>
 
+  <!-- CTA -->
+
   <section class="cta">
-    <h2>一起讓龍埔更好</h2>
+
+    <h2>
+      一起讓龍埔更好
+    </h2>
+
     <p>
-      有地方問題、活動建議、志工參與，歡迎透過 FB 或 LINE 與阿賢聯繫。
+      有地方問題、活動建議、志工參與，
+      歡迎透過 FB 或 LINE 與阿賢聯繫。
     </p>
 
     <div class="hero-buttons" style="justify-content:center;">
-      <a href="https://www.facebook.com/share/1Edr6P6yqN/?mibextid=wwXIfr"
-         class="btn btn-fb"
-         target="_blank">
+
+      <a
+        href="https://www.facebook.com/share/1Edr6P6yqN/?mibextid=wwXIfr"
+        class="btn btn-fb"
+        target="_blank">
+
         FB｜黃林賢
+
       </a>
 
-      <a href="https://line.me/R/ti/p/@120ztjqs"
-         class="btn btn-line"
-         target="_blank">
+      <a
+        href="https://line.me/R/ti/p/@120ztjqs"
+        class="btn btn-line"
+        target="_blank">
+
         LINE｜@120ztjqs
+
       </a>
+
     </div>
+
   </section>
 
+  <!-- Footer -->
+
   <footer>
-    <div class="footer-title">黃林賢</div>
-    <div class="footer-slogan">龍埔向前・賢在實現</div>
+
+    <div class="footer-title">
+      黃林賢
+    </div>
+
+    <div class="footer-slogan">
+      龍埔向前・賢在實現
+    </div>
 
     <div class="footer-info">
+
       Facebook：黃林賢<br>
       LINE ID：@120ztjqs<br>
       地址：新北市三峽區三樹路112號
+
     </div>
+
   </footer>
 
 </body>
+
 </html>
