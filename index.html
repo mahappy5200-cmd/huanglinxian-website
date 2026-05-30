@@ -23,8 +23,6 @@
       text-decoration:none;
     }
 
-    /* Navbar */
-
     .navbar{
       width:100%;
       padding:20px 8%;
@@ -56,14 +54,11 @@
     .menu a{
       color:#333;
       font-weight:700;
-      transition:.3s;
     }
 
     .menu a:hover{
       color:#005fd1;
     }
-
-    /* Hero */
 
     .hero{
       width:100%;
@@ -72,8 +67,7 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      background:
-      linear-gradient(to right,#ffffff 45%,#0b7cff 45%);
+      background:linear-gradient(to right,#ffffff 45%,#0b7cff 45%);
       position:relative;
       overflow:hidden;
     }
@@ -98,40 +92,8 @@
       margin-top:25px;
       font-size:24px;
       font-weight:700;
+      line-height:1.8;
       color:#444;
-    }
-
-    .btn-group{
-      margin-top:40px;
-      display:flex;
-      gap:20px;
-      flex-wrap:wrap;
-    }
-
-    .btn{
-      padding:16px 32px;
-      border-radius:50px;
-      font-weight:900;
-      transition:.3s;
-    }
-
-    .btn-primary{
-      background:#005fd1;
-      color:#fff;
-    }
-
-    .btn-primary:hover{
-      background:#0047a1;
-    }
-
-    .btn-outline{
-      border:2px solid #005fd1;
-      color:#005fd1;
-    }
-
-    .btn-outline:hover{
-      background:#005fd1;
-      color:#fff;
     }
 
     .hero-right{
@@ -146,8 +108,6 @@
       width:100%;
       max-width:520px;
     }
-
-    /* About */
 
     .section{
       padding:100px 8%;
@@ -178,7 +138,24 @@
       color:#444;
     }
 
-    /* Experience */
+    .mv-box{
+      position:relative;
+      padding-bottom:56.25%;
+      height:0;
+      overflow:hidden;
+      border-radius:30px;
+      box-shadow:0 10px 30px rgba(0,0,0,.15);
+      background:#000;
+    }
+
+    .mv-box iframe{
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+      border:none;
+    }
 
     .experience{
       background:#fff;
@@ -206,8 +183,6 @@
       font-weight:bold;
     }
 
-    /* Service */
-
     .cards{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -228,7 +203,6 @@
     }
 
     .card h3{
-      margin-top:20px;
       font-size:26px;
       color:#005fd1;
     }
@@ -238,8 +212,6 @@
       line-height:1.8;
       color:#666;
     }
-
-    /* Footer */
 
     footer{
       background:#005fd1;
@@ -266,22 +238,19 @@
       font-size:18px;
     }
 
-    /* Responsive */
-
     @media(max-width:992px){
-
       .hero{
         flex-direction:column;
         background:#fff;
         text-align:center;
       }
 
-      .hero-left{
+      .hero-left,
+      .hero-right{
         width:100%;
       }
 
       .hero-right{
-        width:100%;
         margin-top:50px;
       }
 
@@ -296,146 +265,76 @@
       .menu{
         display:none;
       }
-
     }
-
   </style>
 </head>
 
 <body>
 
-  <!-- Navbar -->
-
   <nav class="navbar">
-
-    <div class="logo">
-      黃林賢<span>.</span>
-    </div>
+    <div class="logo">黃林賢<span>.</span></div>
 
     <div class="menu">
-      <a href="#">首頁</a>
-      <a href="#">關於阿賢</a>
-      <a href="#">服務專區</a>
-      <a href="#">地方建設</a>
-      <a href="#">最新消息</a>
-      <a href="#">聯絡我們</a>
+      <a href="#home">首頁</a>
+      <a href="#about">關於阿賢</a>
+      <a href="#mv">阿賢MV</a>
+      <a href="#experience">在地經歷</a>
+      <a href="#service">服務專區</a>
     </div>
-
   </nav>
 
-  <!-- Hero -->
-
-  <section class="hero">
-
+  <section class="hero" id="home">
     <div class="hero-left">
-
       <h1>
         龍埔向前<br>
         <span>賢在實現</span>
       </h1>
 
       <div class="slogan">
-        在地深耕・用心服務・龍埔值得更好
+        27歲開始投入地方服務<br>
+        35歲，再次為龍埔全力以赴
       </div>
-
-      <section class="hero">
-
-  <div class="hero-left">
-
-    <h1>
-
-      龍埔向前<br>
-
-      <span>賢在實現</span>
-
-    </h1>
-
-    <div class="slogan">
-
-      27歲開始投入地方服務<br>
-
-      35歲，再次為龍埔全力以赴
-
     </div>
 
-  </div>
-
-  <div class="hero-right">
-
-    <img src="huang2.jpg" alt="黃林賢">
-
-  </div>
-
-</section>
-
-<!-- MV -->
-
-<section class="section">
-
-  <div class="title">
-
-    阿賢的故事 MV
-
-  </div>
-
-  <div style="
-
-    position:relative;
-
-    padding-bottom:56.25%;
-
-    height:0;
-
-    overflow:hidden;
-
-    border-radius:30px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.15);
-
-  ">
-
-    <iframe
-
-      src="https://www.youtube.com/embed/_9SQmmDC2C0"
-
-      title="黃林賢 MV"
-
-      allowfullscreen
-
-      style="
-
-        position:absolute;
-
-        top:0;
-
-        left:0;
-
-        width:100%;
-
-        height:100%;
-
-        border:none;
-
-      ">
-
-    </iframe>
-
-  </div>
-
-</section>
-
-  <!-- Experience -->
-
-  
-
-    <div class="title">
-      在地經歷
+    <div class="hero-right">
+      <img src="huang2.jpg" alt="黃林賢">
     </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="title">關於阿賢</div>
+
+    <div class="about">
+      <img src="a1.png" alt="黃林賢">
+
+      <div class="about-text">
+        我是黃林賢，土生土長的龍埔囡仔。<br><br>
+
+        從27歲開始投入地方服務，至今已經走過多年基層歷練。
+        我深耕地方、傾聽鄉親聲音，希望讓龍埔成為更安全、更進步、更幸福的地方。<br><br>
+
+        未來，我會持續努力，與大家一起讓龍埔向前！
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="mv">
+    <div class="title">阿賢的故事 MV</div>
+
+    <div class="mv-box">
+      <iframe
+        src="https://www.youtube.com/embed/_9SQmmDC2C0"
+        title="黃林賢 MV"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="title">在地經歷</div>
 
     <div class="experience">
-
       <ul>
-
         <li>新北市議員林金結服務處 副主任</li>
         <li>新北市三峽分局義警中隊 副中隊長</li>
         <li>北大國小志工隊 大隊長</li>
@@ -443,103 +342,40 @@
         <li>北大特區聯合策進會 理事</li>
         <li>三峽無極三清宮 管理委員會 副主委</li>
         <li>龍埔里里長候選人</li>
-
       </ul>
-
     </div>
+  </section>
 
- 
-
-  <!-- Service -->
-
-  <section class="section">
-
-    <div class="title">
-      服務專區
-    </div>
+  <section class="section" id="service">
+    <div class="title">服務專區</div>
 
     <div class="cards">
-
       <div class="card">
         <h3>民眾陳情</h3>
-        <p>
-          傾聽地方聲音,
-          即時協助民眾問題。
-        </p>
+        <p>傾聽地方聲音，即時協助民眾問題。</p>
       </div>
 
       <div class="card">
         <h3>志工招募</h3>
-        <p>
-          一起加入服務團隊,
-          讓龍埔更進步。
-        </p>
+        <p>一起加入服務團隊，讓龍埔更進步。</p>
       </div>
 
       <div class="card">
         <h3>活動資訊</h3>
-        <p>
-          掌握地方活動、
-          社區公告與最新消息。
-        </p>
+        <p>掌握地方活動、社區公告與最新消息。</p>
       </div>
-
     </div>
-
   </section>
 
-  <!-- Footer -->
-
   <footer>
-
-    <div class="footer-title">
-      黃林賢
-    </div>
-
-    <div class="footer-slogan">
-      龍埔向前・賢在實現！
-    </div>
+    <div class="footer-title">黃林賢</div>
+    <div class="footer-slogan">龍埔向前・賢在實現！</div>
 
     <div class="footer-info">
-
       Facebook：黃林賢<br>
       地址：新北市三峽區三樹路112號
-
     </div>
-
   </footer>
 
 </body>
 </html>
-<section class="section">
-
-  <h2 style="text-align:center; margin-bottom:20px;">
-    🎵 阿賢的故事 MV
-  </h2>
-
-  <div style="
-    position:relative;
-    padding-bottom:56.25%;
-    height:0;
-    overflow:hidden;
-    border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.2);
-  ">
-
-    <iframe
-      src="https://www.youtube.com/embed/_9SQmmDC2C0"
-      title="黃林賢 MV"
-      allowfullscreen
-      style="
-        position:absolute;
-        top:0;
-        left:0;
-        width:100%;
-        height:100%;
-        border:none;
-      ">
-    </iframe>
-
-  </div>
-
-</section>
