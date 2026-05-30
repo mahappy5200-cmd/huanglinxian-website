@@ -8,6 +8,7 @@
   <title>黃林賢｜龍埔向前・賢在實現</title>
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -40,22 +41,22 @@
     .navbar{
       width:100%;
       padding:22px 8%;
-      background:rgba(255,255,255,.95);
-      backdrop-filter:blur(10px);
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
       position:fixed;
       top:0;
       z-index:999;
-      box-shadow:0 4px 20px rgba(0,0,0,.05);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(12px);
+      box-shadow:0 5px 20px rgba(0,0,0,.05);
     }
 
     .logo{
-      font-size:40px;
+      font-size:42px;
       font-weight:900;
       color:#005fd1;
-      letter-spacing:-1px;
+      letter-spacing:-2px;
     }
 
     .logo span{
@@ -64,14 +65,13 @@
 
     .menu{
       display:flex;
-      gap:36px;
+      gap:35px;
     }
 
     .menu a{
       color:#222;
-      font-weight:800;
       font-size:17px;
-      letter-spacing:.5px;
+      font-weight:800;
       transition:.3s;
       position:relative;
     }
@@ -82,14 +82,14 @@
 
     .menu a::after{
       content:"";
-      width:0;
-      height:3px;
-      background:#005fd1;
       position:absolute;
       left:0;
       bottom:-8px;
-      transition:.3s;
+      width:0;
+      height:3px;
+      background:#005fd1;
       border-radius:99px;
+      transition:.3s;
     }
 
     .menu a:hover::after{
@@ -107,55 +107,106 @@
       display:flex;
       align-items:center;
       justify-content:space-between;
-      background:
-      linear-gradient(
-        135deg,
-        #ffffff 0%,
-        #ffffff 45%,
-        #0b7cff 45%,
-        #005fd1 100%
-      );
-      overflow:hidden;
       position:relative;
+      overflow:hidden;
+
+      background:
+      radial-gradient(circle at top right,
+      rgba(255,255,255,.18),
+      transparent 30%),
+
+      linear-gradient(
+      135deg,
+      #ffffff 0%,
+      #ffffff 45%,
+      #0b7cff 45%,
+      #005fd1 100%);
     }
 
     .hero::before{
       content:"";
-      width:700px;
-      height:700px;
-      background:rgba(255,255,255,.08);
-      border-radius:50%;
+      width:800px;
+      height:800px;
+      background:rgba(255,255,255,.05);
       position:absolute;
-      right:-200px;
-      top:-200px;
+      right:-300px;
+      top:-250px;
+      border-radius:50%;
     }
 
     .hero-left{
-      width:50%;
+      width:48%;
       position:relative;
       z-index:2;
     }
 
     .hero-left h1{
-      font-size:96px;
-      line-height:1.05;
-      letter-spacing:-4px;
-      color:#005fd1;
+      font-size:110px;
+      line-height:1;
       font-weight:900;
+      letter-spacing:-5px;
+      color:#005fd1;
     }
 
     .hero-left h1 span{
       color:#ffb300;
-      text-shadow:0 5px 15px rgba(255,179,0,.2);
+      text-shadow:
+      0 10px 25px rgba(255,179,0,.25);
     }
 
-    .slogan{
+    .hero-subtitle{
       margin-top:35px;
-      font-size:28px;
-      line-height:1.9;
-      font-weight:800;
+      font-size:30px;
+      line-height:1.8;
       color:#333;
-      letter-spacing:1px;
+      font-weight:800;
+    }
+
+    .hero-desc{
+      margin-top:30px;
+      font-size:20px;
+      line-height:2;
+      color:#555;
+      max-width:620px;
+    }
+
+    .hero-buttons{
+      margin-top:45px;
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .hero-btn{
+      padding:18px 38px;
+      border-radius:999px;
+      font-size:18px;
+      font-weight:900;
+      transition:.35s;
+    }
+
+    .hero-btn-primary{
+      background:#005fd1;
+      color:#fff;
+      box-shadow:
+      0 15px 35px rgba(0,95,209,.25);
+    }
+
+    .hero-btn-primary:hover{
+      transform:translateY(-4px);
+      background:#004eb0;
+    }
+
+    .hero-btn-outline{
+      border:2px solid #005fd1;
+      color:#005fd1;
+      background:#fff;
+    }
+
+    .hero-btn-outline:hover{
+      background:#005fd1;
+      color:#fff;
+      transform:translateY(-4px);
     }
 
     .hero-right{
@@ -167,30 +218,32 @@
       z-index:2;
     }
 
-    .hero-photo-wrap{
+    .hero-photo{
       position:relative;
     }
 
-    .hero-photo-wrap::before{
+    .hero-photo::before{
       content:"";
       position:absolute;
-      inset:-30px;
+      inset:-35px;
       background:
-      radial-gradient(circle at top,#ffffff55,transparent 60%),
-      linear-gradient(135deg,#4da3ff,#005fd1);
-      border-radius:40px;
+      linear-gradient(
+      135deg,
+      #ffffff,
+      #8ec3ff);
+      border-radius:45px;
       transform:rotate(-6deg);
       box-shadow:
       0 30px 80px rgba(0,95,209,.35);
     }
 
-    .hero-right img{
+    .hero-photo img{
       width:100%;
-      max-width:520px;
+      max-width:560px;
       position:relative;
       z-index:2;
       filter:
-      drop-shadow(0 20px 40px rgba(0,0,0,.25));
+      drop-shadow(0 25px 40px rgba(0,0,0,.25));
     }
 
     /* =========================
@@ -202,60 +255,93 @@
     }
 
     .title{
-      font-size:56px;
+      font-size:58px;
       font-weight:900;
       color:#005fd1;
       margin-bottom:60px;
       letter-spacing:-2px;
+      text-align:center;
     }
 
     /* =========================
-       About
+       Story
     ========================= */
 
-    .about{
+    .story{
       display:grid;
       grid-template-columns:1fr 1fr;
       gap:60px;
       align-items:center;
     }
 
-    .about img{
+    .story img{
       width:100%;
       border-radius:35px;
       box-shadow:
-      0 20px 50px rgba(0,0,0,.1);
+      0 25px 60px rgba(0,0,0,.1);
     }
 
-    .about-text{
+    .story-text{
       font-size:22px;
       line-height:2.1;
       color:#444;
-      font-weight:500;
     }
 
     /* =========================
        MV
     ========================= */
 
-    .mv-box{
-      position:relative;
-      padding-bottom:56.25%;
-      height:0;
+    .mv-wrap{
+      border-radius:40px;
       overflow:hidden;
-      border-radius:35px;
-      background:#000;
       box-shadow:
-      0 20px 60px rgba(0,0,0,.18);
+      0 25px 70px rgba(0,0,0,.2);
     }
 
-    .mv-box iframe{
-      position:absolute;
-      top:0;
-      left:0;
+    .mv-wrap iframe{
       width:100%;
-      height:100%;
+      aspect-ratio:16/9;
       border:none;
+      display:block;
+    }
+
+    /* =========================
+       Policy
+    ========================= */
+
+    .policy-grid{
+      display:grid;
+      grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+      gap:30px;
+    }
+
+    .policy-card{
+      background:#fff;
+      padding:50px 35px;
+      border-radius:35px;
+      box-shadow:
+      0 15px 40px rgba(0,0,0,.06);
+      transition:.35s;
+    }
+
+    .policy-card:hover{
+      transform:translateY(-10px);
+      box-shadow:
+      0 20px 60px rgba(0,95,209,.12);
+    }
+
+    .policy-card h3{
+      font-size:32px;
+      color:#005fd1;
+      margin-bottom:20px;
+      font-weight:900;
+    }
+
+    .policy-card p{
+      line-height:2;
+      color:#666;
+      font-size:18px;
     }
 
     /* =========================
@@ -264,10 +350,10 @@
 
     .experience{
       background:#fff;
-      border-radius:35px;
-      padding:60px;
+      border-radius:40px;
+      padding:65px;
       box-shadow:
-      0 10px 40px rgba(0,0,0,.06);
+      0 15px 45px rgba(0,0,0,.06);
     }
 
     .experience ul{
@@ -277,10 +363,10 @@
     .experience li{
       margin-bottom:24px;
       font-size:24px;
-      padding-left:42px;
-      position:relative;
       font-weight:700;
       color:#333;
+      padding-left:45px;
+      position:relative;
     }
 
     .experience li::before{
@@ -288,48 +374,8 @@
       position:absolute;
       left:0;
       color:#0b7cff;
-      font-weight:bold;
       font-size:24px;
-    }
-
-    /* =========================
-       Cards
-    ========================= */
-
-    .cards{
-      display:grid;
-      grid-template-columns:
-      repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
-    }
-
-    .card{
-      background:#fff;
-      border-radius:30px;
-      padding:45px 35px;
-      text-align:center;
-      box-shadow:
-      0 10px 35px rgba(0,0,0,.06);
-      transition:.35s;
-    }
-
-    .card:hover{
-      transform:translateY(-10px);
-      box-shadow:
-      0 20px 50px rgba(0,95,209,.12);
-    }
-
-    .card h3{
-      font-size:30px;
-      color:#005fd1;
-      font-weight:900;
-    }
-
-    .card p{
-      margin-top:18px;
-      line-height:2;
-      color:#666;
-      font-size:18px;
+      font-weight:bold;
     }
 
     /* =========================
@@ -338,29 +384,34 @@
 
     footer{
       background:
-      linear-gradient(135deg,#005fd1,#0047a1);
+      linear-gradient(
+      135deg,
+      #005fd1,
+      #00429b);
+
       color:#fff;
-      padding:80px 8%;
-      margin-top:80px;
+      padding:90px 8%;
+      margin-top:100px;
+      text-align:center;
     }
 
     .footer-title{
-      font-size:58px;
+      font-size:64px;
       font-weight:900;
-      letter-spacing:-2px;
+      letter-spacing:-3px;
     }
 
     .footer-slogan{
+      margin-top:18px;
       color:#ffd54f;
-      font-size:28px;
-      margin-top:14px;
+      font-size:32px;
       font-weight:800;
     }
 
     .footer-info{
-      margin-top:35px;
-      line-height:2.2;
+      margin-top:40px;
       font-size:20px;
+      line-height:2.3;
       color:#eef4ff;
     }
 
@@ -386,28 +437,29 @@
       }
 
       .hero-right{
-        margin-top:60px;
+        margin-top:70px;
       }
 
       .hero-left h1{
-        font-size:64px;
+        font-size:72px;
       }
 
-      .slogan{
-        font-size:22px;
+      .hero-subtitle{
+        font-size:24px;
       }
 
-      .about{
+      .story{
         grid-template-columns:1fr;
       }
 
       .title{
-        font-size:42px;
+        font-size:46px;
       }
 
     }
 
   </style>
+
 </head>
 
 <body>
@@ -422,10 +474,10 @@
 
     <div class="menu">
       <a href="#home">首頁</a>
-      <a href="#about">關於阿賢</a>
-      <a href="#mv">阿賢MV</a>
+      <a href="#story">阿賢故事</a>
+      <a href="#mv">競選MV</a>
+      <a href="#policy">三大主張</a>
       <a href="#experience">在地經歷</a>
-      <a href="#service">服務專區</a>
     </div>
 
   </nav>
@@ -441,16 +493,33 @@
         <span>賢在實現</span>
       </h1>
 
-      <div class="slogan">
+      <div class="hero-subtitle">
         27歲開始投入地方服務<br>
         35歲，再次為龍埔全力以赴
+      </div>
+
+      <div class="hero-desc">
+        深耕地方多年，傾聽民意、服務鄉親，
+        用實際行動讓龍埔變得更安全、更進步、更幸福。
+      </div>
+
+      <div class="hero-buttons">
+
+        <a href="#mv" class="hero-btn hero-btn-primary">
+          ▶ 觀看競選 MV
+        </a>
+
+        <a href="#story" class="hero-btn hero-btn-outline">
+          認識黃林賢
+        </a>
+
       </div>
 
     </div>
 
     <div class="hero-right">
 
-      <div class="hero-photo-wrap">
+      <div class="hero-photo">
 
         <img src="huang2.png" alt="黃林賢">
 
@@ -460,27 +529,32 @@
 
   </section>
 
-  <!-- About -->
+  <!-- Story -->
 
-  <section class="section" id="about">
+  <section class="section" id="story">
 
     <div class="title">
-      關於阿賢
+      阿賢的故事
     </div>
 
-    <div class="about">
+    <div class="story">
 
       <img src="a1.png" alt="黃林賢">
 
-      <div class="about-text">
+      <div class="story-text">
 
         我是黃林賢，土生土長的龍埔囡仔。<br><br>
 
-        從27歲開始投入地方服務，至今已經走過多年基層歷練。<br><br>
+        從27歲開始投入地方服務，
+        至今已經走過多年基層歷練。<br><br>
 
-        我深耕地方、傾聽鄉親聲音，希望讓龍埔成為更安全、更進步、更幸福的地方。<br><br>
+        我始終相信，
+        地方需要的是願意傾聽、
+        願意行動、
+        願意真正站在第一線的人。<br><br>
 
-        未來，我會持續努力，與大家一起讓龍埔向前！
+        未來，我會持續努力，
+        與大家一起讓龍埔向前！
 
       </div>
 
@@ -496,13 +570,62 @@
       阿賢的故事 MV
     </div>
 
-    <div class="mv-box">
+    <div class="mv-wrap">
 
       <iframe
         src="https://www.youtube.com/embed/_9SQmmDC2C0"
         title="黃林賢 MV"
         allowfullscreen>
       </iframe>
+
+    </div>
+
+  </section>
+
+  <!-- Policy -->
+
+  <section class="section" id="policy">
+
+    <div class="title">
+      三大主張
+    </div>
+
+    <div class="policy-grid">
+
+      <div class="policy-card">
+
+        <h3>交通安全</h3>
+
+        <p>
+          改善危險路口、
+          強化學區安全、
+          守護孩子安心上學。
+        </p>
+
+      </div>
+
+      <div class="policy-card">
+
+        <h3>社區環境</h3>
+
+        <p>
+          推動環境改善、
+          提升公共品質、
+          打造更宜居的龍埔。
+        </p>
+
+      </div>
+
+      <div class="policy-card">
+
+        <h3>青年參與</h3>
+
+        <p>
+          鼓勵青年投入地方、
+          建立更多交流與參與機會。
+        </p>
+
+      </div>
 
     </div>
 
@@ -534,53 +657,6 @@
 
   </section>
 
-  <!-- Service -->
-
-  <section class="section" id="service">
-
-    <div class="title">
-      服務專區
-    </div>
-
-    <div class="cards">
-
-      <div class="card">
-
-        <h3>民眾陳情</h3>
-
-        <p>
-          傾聽地方聲音，<br>
-          即時協助民眾問題。
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>志工招募</h3>
-
-        <p>
-          一起加入服務團隊，<br>
-          讓龍埔更進步。
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>活動資訊</h3>
-
-        <p>
-          掌握地方活動、<br>
-          社區公告與最新消息。
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
   <!-- Footer -->
 
   <footer>
@@ -603,4 +679,5 @@
   </footer>
 
 </body>
+
 </html>
