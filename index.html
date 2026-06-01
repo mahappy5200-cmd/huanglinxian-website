@@ -584,9 +584,70 @@
   background:#003b88;
 
 }
-``
+/* Gallery Filter */
+
+.gallery-filter{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:16px;
+
+  margin-bottom:45px;
+}
+
+.filter-btn{
+
+  border:none;
+
+  background:#fff;
+
+  color:#005fd1;
+
+  padding:14px 24px;
+
+  border-radius:999px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  transition:.3s;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,.08);
+}
+
+.filter-btn:hover{
+
+  transform:translateY(-4px);
+
+}
+
+.filter-btn.active{
+
+  background:#005fd1;
+
+  color:#fff;
+}
   </style>
-  
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SEQ6DKVNY4"></script>
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag(){
+    dataLayer.push(arguments);
+  }
+
+  gtag('js', new Date());
+
+  gtag('config', 'G-SEQ6DKVNY4');
+</script>
 </head>
 
 <body>
@@ -908,42 +969,116 @@
   </section>
 
   <section class="section" id="gallery">
-    <div class="title">
-      活動照片牆
+
+  <div class="title">
+    活動照片牆
+  </div>
+
+  <!-- 分類按鈕 -->
+
+  <div class="gallery-filter">
+
+    <button class="filter-btn active" data-filter="all">
+      全部
+    </button>
+
+    <button class="filter-btn" data-filter="campaign">
+      路口拜票
+    </button>
+
+    <button class="filter-btn" data-filter="volunteer">
+      志工服務
+    </button>
+
+    <button class="filter-btn" data-filter="family">
+      親子活動
+    </button>
+
+    <button class="filter-btn" data-filter="meeting">
+      地方會勘
+    </button>
+
+  </div>
+
+  <!-- 照片 -->
+
+  <div class="gallery-grid">
+
+    <!-- 路口拜票 -->
+
+    <div class="gallery-item" data-category="campaign">
+
+      <img src="photo1.jpeg" alt="活動照片">
+
+      <div class="gallery-label">
+        路口拜票
+      </div>
+
     </div>
 
-    <div class="gallery-grid">
-      <div class="gallery-item">
-        <img src="photo1.jpeg" alt="活動照片">
-        <div class="gallery-label">路口拜票</div>
+    <!-- 志工服務 -->
+
+    <div class="gallery-item" data-category="volunteer">
+
+      <img src="photo2.jpeg" alt="活動照片">
+
+      <div class="gallery-label">
+        志工服務
       </div>
 
-      <div class="gallery-item">
-        <img src="photo2.jpeg" alt="活動照片">
-        <div class="gallery-label">志工服務</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="photo3.jpeg" alt="活動照片">
-        <div class="gallery-label">親子活動</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="photo4.jpg" alt="活動照片">
-        <div class="gallery-label">地方會勘</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="photo5.jpeg" alt="活動照片">
-        <div class="gallery-label">里民互動</div>
-      </div>
-
-      <div class="gallery-item">
-        <img src="photo6.jpeg" alt="活動照片">
-        <div class="gallery-label">服務日常</div>
-      </div>
     </div>
-  </section>
+
+    <!-- 親子活動 -->
+
+    <div class="gallery-item" data-category="family">
+
+      <img src="photo3.jpeg" alt="活動照片">
+
+      <div class="gallery-label">
+        親子活動
+      </div>
+
+    </div>
+
+    <!-- 地方會勘 -->
+
+    <div class="gallery-item" data-category="meeting">
+
+      <img src="photo4.jpg" alt="活動照片">
+
+      <div class="gallery-label">
+        地方會勘
+      </div>
+
+    </div>
+
+    <!-- 路口拜票 -->
+
+    <div class="gallery-item" data-category="campaign">
+
+      <img src="photo5.jpeg" alt="活動照片">
+
+      <div class="gallery-label">
+        里民互動
+      </div>
+
+    </div>
+
+    <!-- 志工服務 -->
+
+    <div class="gallery-item" data-category="volunteer">
+
+      <img src="photo6.jpeg" alt="活動照片">
+
+      <div class="gallery-label">
+        服務日常
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <section class="section" id="experience">
     <div class="title">
@@ -1034,7 +1169,49 @@ musicToggle.addEventListener("click", () => {
 });
 
 </script>
+<script>
 
+const filterButtons = document.querySelectorAll(".filter-btn");
+
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    document.querySelector(".filter-btn.active")
+    .classList.remove("active");
+
+    button.classList.add("active");
+
+    const filter = button.getAttribute("data-filter");
+
+    galleryItems.forEach(item => {
+
+      if(filter === "all"){
+
+        item.style.display = "block";
+
+      }else{
+
+        if(item.getAttribute("data-category") === filter){
+
+          item.style.display = "block";
+
+        }else{
+
+          item.style.display = "none";
+
+        }
+
+      }
+
+    });
+
+  });
+
+});
+
+</script>
 </body>
 </html>
-``
