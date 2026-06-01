@@ -642,72 +642,7 @@
 }
 /* Social Feed */
 
-.social-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:35px;
-}
 
-.social-card{
-  background:#fff;
-  border-radius:35px;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-  transition:.35s;
-}
-
-.social-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 25px 60px rgba(0,95,209,.15);
-}
-
-.social-card img{
-  width:100%;
-  height:260px;
-  object-fit:cover;
-}
-
-.social-content{
-  padding:30px;
-}
-
-.social-tag{
-  display:inline-block;
-  background:#eaf4ff;
-  color:#005fd1;
-  padding:8px 16px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:900;
-  margin-bottom:18px;
-}
-
-.social-content h3{
-  font-size:30px;
-  color:#005fd1;
-  margin-bottom:18px;
-  font-weight:900;
-}
-
-.social-content p{
-  color:#555;
-  line-height:2;
-  font-size:18px;
-}
-
-.social-btn{
-  display:inline-block;
-  margin-top:25px;
-  background:#005fd1;
-  color:#fff;
-  padding:14px 24px;
-  border-radius:999px;
-  font-weight:900;
-  transition:.3s;
-}
-
-.social-btn:hover{
-  background:#003b88;
 }
 /* Service Form */
 
@@ -953,59 +888,97 @@ src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0">
 
   <!-- Policy -->
 
-  <section class="section" id="policy">
+<section class="section" id="policy">
 
-    <div class="title">
-      五大主張
+  <div class="title">
+    五大主張
+  </div>
+
+  <div class="policy-grid">
+
+    <div class="policy-card">
+      <h3>🚦 交通安全</h3>
+      <p>
+        改善危險路口、強化學區安全，
+        守護孩子與行人安心通行。
+      </p>
     </div>
 
-    <div class="policy-grid">
-
-      <div class="policy-card">
-        <h3>🚦 交通安全</h3>
-        <p>
-          改善危險路口、強化學區安全，
-          守護孩子與行人安心通行。
-        </p>
-      </div>
-
-      <div class="policy-card">
-        <h3>🌳 環境品質</h3>
-        <p>
-          提升公共環境、增加綠化美化，
-          打造更乾淨舒適的龍埔。
-        </p>
-      </div>
-
-      <div class="policy-card">
-        <h3>🧑 青年參與</h3>
-        <p>
-          鼓勵青年投入地方，
-          建立更多世代交流與公共參與機會。
-        </p>
-      </div>
-
-      <div class="policy-card">
-        <h3>👵 長者照顧</h3>
-        <p>
-          關心長輩需求，
-          推動友善高齡環境，
-          讓長者生活更安心。
-        </p>
-      </div>
-
-      <div class="policy-card">
-        <h3>❤️ 弱勢關懷</h3>
-        <p>
-          串聯公益與社會資源，
-          協助弱勢家庭，
-          不讓任何人被遺忘。
-        </p>
-      </div>
-
+    <div class="policy-card">
+      <h3>🌳 環境品質</h3>
+      <p>
+        提升公共環境、增加綠化美化，
+        打造更乾淨舒適的龍埔。
+      </p>
     </div>
 
-  </section>
+    <div class="policy-card">
+      <h3>🧑 青年參與</h3>
+      <p>
+        鼓勵青年投入地方，
+        建立更多世代交流與公共參與機會。
+      </p>
+    </div>
+
+    <div class="policy-card">
+      <h3>👵 長者照顧</h3>
+      <p>
+        關心長輩需求，
+        推動友善高齡環境，
+        讓長者生活更安心。
+      </p>
+    </div>
+
+    <div class="policy-card">
+      <h3>❤️ 弱勢關懷</h3>
+      <p>
+        串聯公益與社會資源，
+        協助弱勢家庭，
+        不讓任何人被遺忘。
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- Service Form -->
+
+<section class="section" id="service-form">
+
+  <div class="title">
+    民眾服務平台
+  </div>
+
+  <div class="service-form-card">
+
+    <div class="service-icon">
+      📢
+    </div>
+
+    <h3>
+      您負責說，賢負責做
+    </h3>
+
+    <p>
+      如果您有交通安全、環境改善、
+      長者照顧、弱勢協助、
+      社區建議或任何地方問題，
+      歡迎透過表單向阿賢反映。
+    </p>
+
+    <a
+      href="https://forms.gle/6452nYrEBubCpeKh7"
+      target="_blank"
+      class="service-form-btn">
+
+      我要反映問題
+
+    </a>
+
+  </div>
+
+</section>
 
   <!-- News -->
 
@@ -1113,122 +1086,7 @@ src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0">
 </section>
 <!-- Social Feed -->
 
-<section class="section" id="social">
 
-  <div class="title">
-    阿賢最新動態
-  </div>
-
-  <div class="social-grid">
-
-    <!-- Card 1 -->
-
-    <div class="social-card">
-
-      <img src="photo1.jpeg" alt="最新動態">
-
-      <div class="social-content">
-
-        <div class="social-tag">
-          路口日常
-        </div>
-
-        <h3>
-          每天的早安問候
-        </h3>
-
-        <p>
-          只要時間允許，
-          阿賢都會在龍埔各路口與大家問好，
-          傾聽地方聲音。
-        </p>
-
-        <a
-          href="https://www.facebook.com/huang.lin.xian.541531/"
-          target="_blank"
-          class="social-btn">
-
-          前往 Facebook
-
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- Card 2 -->
-
-    <div class="social-card">
-
-      <img src="photo3.jpeg" alt="最新動態">
-
-      <div class="social-content">
-
-        <div class="social-tag">
-          社區活動
-        </div>
-
-        <h3>
-          親子與地方互動
-        </h3>
-
-        <p>
-          希望透過更多活動，
-          讓龍埔不只是居住地，
-          更是一個有溫度的地方。
-        </p>
-
-        <a
-          href="https://www.facebook.com/huang.lin.xian.541531/"
-          target="_blank"
-          class="social-btn">
-
-          查看更多
-
-        </a>
-
-      </div>
-
-    </div>
-
-    <!-- Card 3 -->
-
-    <div class="social-card">
-
-      <img src="photo5.jpeg" alt="最新動態">
-
-      <div class="social-content">
-
-        <div class="social-tag">
-          地方服務
-        </div>
-
-        <h3>
-          深耕地方・持續前進
-        </h3>
-
-        <p>
-          無論是交通安全、
-          長者照顧或弱勢關懷，
-          阿賢都會持續努力。
-        </p>
-
-        <a
-          href="https://www.facebook.com/huang.lin.xian.541531/"
-          target="_blank"
-          class="social-btn">
-
-          追蹤阿賢
-
-        </a>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
   <section class="section" id="gallery">
 
     <div class="title">
