@@ -617,15 +617,99 @@
 
     }
 .fb-feed-box{
-  max-width:560px;
+  width:100%;
+  max-width:430px;
   margin:0 auto;
   background:#fff;
-  padding:30px;
-  border-radius:35px;
+  padding:15px;
+  border-radius:28px;
   box-shadow:0 15px 40px rgba(0,0,0,.08);
   display:flex;
   justify-content:center;
+  overflow:hidden;
 }
+
+.fb-feed-box .fb-page{
+  width:100%;
+}
+
+@media(max-width:600px){
+  .fb-feed-box{
+    max-width:100%;
+    padding:8px;
+    border-radius:22px;
+  }
+}
+/* Social Feed */
+
+.social-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
+}
+
+.social-card{
+  background:#fff;
+  border-radius:35px;
+  overflow:hidden;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
+  transition:.35s;
+}
+
+.social-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 25px 60px rgba(0,95,209,.15);
+}
+
+.social-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+}
+
+.social-content{
+  padding:30px;
+}
+
+.social-tag{
+  display:inline-block;
+  background:#eaf4ff;
+  color:#005fd1;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:900;
+  margin-bottom:18px;
+}
+
+.social-content h3{
+  font-size:30px;
+  color:#005fd1;
+  margin-bottom:18px;
+  font-weight:900;
+}
+
+.social-content p{
+  color:#555;
+  line-height:2;
+  font-size:18px;
+}
+
+.social-btn{
+  display:inline-block;
+  margin-top:25px;
+  background:#005fd1;
+  color:#fff;
+  padding:14px 24px;
+  border-radius:999px;
+  font-weight:900;
+  transition:.3s;
+}
+
+.social-btn:hover{
+  background:#003b88;
+}
+
   </style>
 </head>
 
@@ -956,14 +1040,14 @@ src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0">
   <div class="fb-feed-box">
 
     <div class="fb-page"
-      data-href="https://www.facebook.com/profile.php?id=100067677817951"
-      data-tabs="timeline"
-      data-width="500"
-      data-height="650"
-      data-small-header="false"
-      data-adapt-container-width="true"
-      data-hide-cover="false"
-      data-show-facepile="true">
+  data-href="https://www.facebook.com/profile.php?id=100067677817951"
+  data-tabs="timeline"
+  data-width="380"
+  data-height="720"
+  data-small-header="false"
+  data-adapt-container-width="true"
+  data-hide-cover="false"
+  data-show-facepile="true">
 
       <blockquote
         cite="https://www.facebook.com/profile.php?id=100067677817951"
@@ -980,7 +1064,124 @@ src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v19.0">
   </div>
 
 </section>
+<!-- Social Feed -->
 
+<section class="section" id="social">
+
+  <div class="title">
+    阿賢最新動態
+  </div>
+
+  <div class="social-grid">
+
+    <!-- Card 1 -->
+
+    <div class="social-card">
+
+      <img src="photo1.jpeg" alt="最新動態">
+
+      <div class="social-content">
+
+        <div class="social-tag">
+          路口日常
+        </div>
+
+        <h3>
+          每天的早安問候
+        </h3>
+
+        <p>
+          只要時間允許，
+          阿賢都會在龍埔各路口與大家問好，
+          傾聽地方聲音。
+        </p>
+
+        <a
+          href="https://www.facebook.com/huang.lin.xian.541531/"
+          target="_blank"
+          class="social-btn">
+
+          前往 Facebook
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Card 2 -->
+
+    <div class="social-card">
+
+      <img src="photo3.jpeg" alt="最新動態">
+
+      <div class="social-content">
+
+        <div class="social-tag">
+          社區活動
+        </div>
+
+        <h3>
+          親子與地方互動
+        </h3>
+
+        <p>
+          希望透過更多活動，
+          讓龍埔不只是居住地，
+          更是一個有溫度的地方。
+        </p>
+
+        <a
+          href="https://www.facebook.com/huang.lin.xian.541531/"
+          target="_blank"
+          class="social-btn">
+
+          查看更多
+
+        </a>
+
+      </div>
+
+    </div>
+
+    <!-- Card 3 -->
+
+    <div class="social-card">
+
+      <img src="photo5.jpeg" alt="最新動態">
+
+      <div class="social-content">
+
+        <div class="social-tag">
+          地方服務
+        </div>
+
+        <h3>
+          深耕地方・持續前進
+        </h3>
+
+        <p>
+          無論是交通安全、
+          長者照顧或弱勢關懷，
+          阿賢都會持續努力。
+        </p>
+
+        <a
+          href="https://www.facebook.com/huang.lin.xian.541531/"
+          target="_blank"
+          class="social-btn">
+
+          追蹤阿賢
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
   <section class="section" id="gallery">
 
     <div class="title">
