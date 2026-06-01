@@ -548,10 +548,64 @@
         border-radius:22px;
       }
     }
+    
+  /* 音樂播放器 */
+
+.music-player{
+
+  position:fixed;
+
+  right:25px;
+  bottom:25px;
+
+  background:#005fd1;
+  color:#fff;
+
+  padding:16px 24px;
+
+  border-radius:999px;
+
+  font-weight:900;
+
+  cursor:pointer;
+
+  z-index:9999;
+
+  box-shadow:
+  0 10px 25px rgba(0,0,0,.2);
+
+  transition:.3s;
+}
+
+.music-player:hover{
+
+  transform:translateY(-4px);
+
+  background:#003b88;
+
+}
+``
   </style>
+  
 </head>
 
 <body>
+  <!-- 背景音樂 -->
+
+<audio id="bg-music" loop>
+
+  <source src="campaign.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- 音樂按鈕 -->
+
+<div class="music-player" id="music-toggle">
+
+  🎵 競選主題曲
+
+</div
+
 
   <div id="fb-root"></div>
 
@@ -955,6 +1009,31 @@
       地址：新北市三峽區三樹路112號
     </div>
   </footer>
+<script>
+
+const music = document.getElementById("bg-music");
+
+const musicToggle = document.getElementById("music-toggle");
+
+let isPlaying = false;
+
+musicToggle.addEventListener("click", () => {
+
+  if(isPlaying){
+
+    music.pause();
+
+  }else{
+
+    music.play();
+
+  }
+
+  isPlaying = !isPlaying;
+
+});
+
+</script>
 
 </body>
 </html>
